@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
 import CityTabs from "./components/CityTabs";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import "./App.css"
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("Los Angeles");
 
   return (
-    <div className="App">
-      <header className="header">Simple Weather</header>
+    <div className="app-container">
+      <Header></Header>
       <CityTabs selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
-      <Home />
+      <Home selectedCity={selectedCity} />
+      <Footer></Footer>
     </div>
   );
 }

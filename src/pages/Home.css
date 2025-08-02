@@ -1,0 +1,10 @@
+.home-container {
+  height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: 
+    linear-gradient(to bottom, #005C8B 0%, #00A7C4 66.66%, #D6C7BB 66.66%, #D6C7BB 100%);
+  display: flex;
+  flex-direction: column;
+}

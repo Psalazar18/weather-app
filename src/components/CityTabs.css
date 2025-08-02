@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+.tab {
+  flex: 1;
+  background-color: #fafafa;
+  color: #969696;
+  border: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  box-shadow: none;
+  text-align: center;
+}
+
+.tab:hover,
+.tab.active {
+  color: #000000;
+  box-shadow: inset 0 -2px 0 #F67357;
+}

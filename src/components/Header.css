@@ -1,0 +1,15 @@
+.weather-header {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  background-color: #1565C0;
+  color: white;
+  text-align: left;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.weather-header h1 {
+    font-weight: 400;
+}

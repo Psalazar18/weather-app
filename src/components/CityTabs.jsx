@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
-import { getCurrentWeather } from '../services/weatherApi';
-import { getForecast } from '../services/weatherApi';
 import "./CityTabs.css"
-
 
 const cities = ["Rio de Janeiro", "Beijing", "Los Angeles"];
 
 export default function CityTabs({ selectedCity, setSelectedCity }) {
-    useEffect(() => {
-      getCurrentWeather("Beijing");
-      getForecast("Beijing")
-    }, []);
+  useEffect(() => {
+    if (!selectedCity) {
+      setSelectedCity(cities[0]);
+    }
+  }, [selectedCity, setSelectedCity]);
   return (
     <div className="tabs">
       {cities.map((city) => (

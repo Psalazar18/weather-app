@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import "./App.css"
 
 function App() {
-  const [selectedCity, setSelectedCity] = useState("Los Angeles");
+  const [selectedCity, setSelectedCity] = useState("");
 
   return (
     <div className="app-container">

@@ -1,11 +1,11 @@
 .weather-footer {
   background-color: #1565C0;
-  height: 3rem;
+  height: 2rem;
   width: 100%;
   text-align: end;
   color: #fff;
 }
 .weather-footer p{
-    padding: 1rem;
-    margin: 0;
+  padding: 0.2rem;
+  margin: 0;
 }

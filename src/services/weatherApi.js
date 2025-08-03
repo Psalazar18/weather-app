@@ -8,7 +8,6 @@ export async function getForecast(city) {
     );
     if (!response.ok) throw new Error("Error fetching forecast");
     const data = await response.json();
-    console.log("forecast", data)
     return data;
   } catch (error) {
     console.error(error);
@@ -16,7 +15,7 @@ export async function getForecast(city) {
   }
 }
 
-// Extrae las próximas 5 horas del forecast
+// Extrae las próximas 6 horas 
 export function getHourlyForecast(forecastData) {
   if (!forecastData?.list) return [];
   return forecastData.list.slice(0, 6);

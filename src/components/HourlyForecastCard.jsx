@@ -39,11 +39,11 @@ export default function HourlyForecast({ hourlyData, onRefresh, loading }) {
 
   const renderContent = () => {
     if (loading) {
-      return <p className="loading-text">Cargando datos del clima...</p>;
+      return <p className="loading-text">Loading forecast for the next hours...</p>;
     }
 
     if (showNoData) {
-      return <p>No hay datos disponibles para las próximas horas.</p>;
+      return <p>No data available for the next hours.</p>;
     }
 
     return (

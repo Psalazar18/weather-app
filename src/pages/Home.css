@@ -7,4 +7,7 @@
     linear-gradient(to bottom, #005C8B 0%, #00A7C4 66.66%, #D6C7BB 66.66%, #D6C7BB 100%);
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
 }

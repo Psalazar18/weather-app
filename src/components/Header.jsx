@@ -5,7 +5,6 @@ function Header(){
         <header className="weather-header">
             <h1>Simple Weather</h1>
         </header>
-
     )
 }
 

@@ -1,5 +1,5 @@
 .home-container {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
@@ -10,4 +10,12 @@
   gap: 1rem;
   padding: 0.5rem 0;
   box-sizing: border-box;
+  flex-grow: 1;
+}
+
+/* DESKTOPS */
+@media (min-width: 1024px) {
+    .home-container {
+      min-height: 87vh;
+    }
 }

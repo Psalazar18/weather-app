@@ -8,15 +8,21 @@ import "./App.css"
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
   const [lastUpdated, setLastUpdated] = useState(null);
-
+  const [searchMessage, setSearchMessage] = useState("");
 
   return (
     <div className="app-container">
-      <Header />
-      <CityTabs selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+      <Header setSelectedCity={setSelectedCity}
+        searchMessage={searchMessage}
+        setSearchMessage={setSearchMessage} />
+
+      <CityTabs selectedCity={selectedCity}
+        setSelectedCity={setSelectedCity}
+        setSearchMessage={setSearchMessage} />
 
       <div className="app-content">
-        <Home selectedCity={selectedCity} setLastUpdated={setLastUpdated} />
+        <Home selectedCity={selectedCity}
+          setLastUpdated={setLastUpdated} />
       </div>
 
       <Footer lastUpdated={lastUpdated} />

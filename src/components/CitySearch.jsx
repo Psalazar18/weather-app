@@ -5,7 +5,7 @@ import "./CitySearch.css";
 export default function CitySearch({ setSelectedCity, setSearchMessage, searchMessage }) {
     const [query, setQuery] = useState("");
     const [showInput, setShowInput] = useState(false);
-    const inputRef = useRef();
+    const containerRef = useRef(null);
 
     const handleSearch = () => {
         const normalizedQuery = query
@@ -35,19 +35,30 @@ export default function CitySearch({ setSelectedCity, setSearchMessage, searchMe
         if (searchMessage) {
             setShowInput(false);
         }
+        function handleClickOutside(event) {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setShowInput(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
     }, [searchMessage]);
 
     return (
-        <div className="search-bar">
+        <div className="search-bar" ref={containerRef}>
             {!searchMessage && (
                 <button
                     className="search-btn"
+                    aria-label="Search"
                     onClick={() => {
                         if (showInput && query.trim()) {
                             handleSearch();
                         } else {
                             setShowInput(true);
-                            setTimeout(() => inputRef.current?.focus(), 0);
                         }
                     }}
                 >
@@ -57,7 +68,6 @@ export default function CitySearch({ setSelectedCity, setSearchMessage, searchMe
 
             {showInput && (
                 <input
-                    ref={inputRef}
                     type="text"
                     placeholder="Search city..."
                     value={query}

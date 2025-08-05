@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./DailyForecastCard.css";
 
-export default function DailyForecastCard({ dailyData, onRefresh, loading }) {
+export default function DailyForecastCard({ dailyData, loading }) {
   const [showNoData, setShowNoData] = useState(false);
   const timeoutRef = useRef(null);
 

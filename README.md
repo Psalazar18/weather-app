@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application that provides weather forecasts (hourly and daily) for selected cities. The app uses the OpenWeather API for forecast data and includes features like city search, tabs for quick city selection, and a clean responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **City Selection:** Choose from preset tabs or search any city from a large dataset.
+- **Hourly Forecast:** Displays the weather for the next 6 hours.
+- **Daily Forecast:** Shows the weather for the next 5 days.
+- **Loading States:** UI indicates when data is being fetched.
+- **Last Updated:** Shows the last time the forecast was refreshed.
+- **Responsive Design:** Optimized for desktop and mobile devices.
+- **Error Handling:** Alerts users when a searched city is not found.
+- **Icon Lazy Loading:** Weather icons are fetched dynamically reducing the initial bundle size and improving performance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React (Functional Components & Hooks)
+- Fetch API for HTTP requests
+- OpenWeather API for weather data
+- Local JSON city dataset for city search
+- CSS Flexbox for layout and styling
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/Psalazar18/weather-app.git
+   cd weather-app
 
-### `npm run eject`
+2. Install dependencies: 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+    npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Start the development server: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+    npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+- Select a city from the tabs or click the search icon to type and search for any city.
+- The hourly and daily forecasts update automatically when a city is selected.
+- Use the refresh button on the hourly forecast to manually reload data.
+- The last update timestamp is shown in the footer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
+- **/src/components** — Reusable components like Header, CityTabs, CitySearch, HourlyForecastCard, DailyForecastCard, Footer.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **/src/pages** — Pages like Home that orchestrate the forecast display.
 
-### Code Splitting
+- **/src/services** — API calls and data extraction helpers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **/src/data** — Static data such as the JSON file for cities.
 
-### Analyzing the Bundle Size
+- **/src/App.jsx** — Main app component coordinating layout and state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Notes
+- The app normalizes city names to handle accented characters and improve search accuracy.
+- The city search uses a local JSON dataset to avoid excessive API calls.
+- The weather data fetch is done once per city change and includes loading states and error handling.
+- The UI prevents layout shifts during loading by setting minimum heights on forecast containers.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

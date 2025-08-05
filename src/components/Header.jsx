@@ -12,7 +12,9 @@ function Header({ setSelectedCity, searchMessage, setSearchMessage }) {
             {searchMessage && (
                 <div className="search-message">
                     <strong>{searchMessage}</strong>{" "}
-                    <button onClick={() => setSearchMessage("")}>X</button>
+                    <button 
+                    aria-label="Close message"
+                    onClick={() => setSearchMessage("")}>X</button>
                 </div>
             )}
 

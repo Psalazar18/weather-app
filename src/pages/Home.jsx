@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import { getForecast, getHourlyForecast, getDailyForecast } from "../services/weatherApi";
 import HourlyForecastCard from "../components/HourlyForecastCard"
 import DailyForecastCard from "../components/DailyForecastCard";
-
 import "./Home.css"
 
 function Home({ selectedCity, setLastUpdated }) {
     const [hourlyData, setHourlyData] = useState([]);
     const [dailyData, setDailyData] = useState([]);
-    const [loadingHourly, setLoadingHourly] = useState(false);
-    const [loadingDaily, setLoadingDaily] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [refreshTrigger, setRefreshTrigger] = useState(0);
 
     useEffect(() => {
@@ -17,8 +15,7 @@ function Home({ selectedCity, setLastUpdated }) {
 
         async function fetchData() {
             try {
-                setLoadingHourly(true);
-                setLoadingDaily(true);
+                setLoading(true);
 
                 const data = await getForecast(selectedCity);
                 if (data) {
@@ -34,8 +31,7 @@ function Home({ selectedCity, setLastUpdated }) {
                 setHourlyData([]);
                 setDailyData([]);
             } finally {
-                setLoadingHourly(false);
-                setLoadingDaily(false);
+                setLoading(false);
             }
         }
 
@@ -52,12 +48,12 @@ function Home({ selectedCity, setLastUpdated }) {
             <HourlyForecastCard
                 hourlyData={hourlyData}
                 onRefresh={handleRefresh}
-                loading={loadingHourly}
+                loading={loading}
             />
             <DailyForecastCard
                 dailyData={dailyData}
                 onRefresh={handleRefresh}
-                loading={loadingDaily}
+                loading={loading}
             />
         </main>
     )

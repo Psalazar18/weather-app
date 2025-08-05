@@ -30,7 +30,7 @@ export default function HourlyForecast({ hourlyData, onRefresh, loading }) {
       <button
         className="refresh-button"
         onClick={onRefresh}
-        aria-label="Actualizar pronóstico por hora"
+        aria-label="Refresh data"
       >
         🔄
       </button>

@@ -13,7 +13,7 @@ A simple React application that provides weather forecasts (hourly and daily) fo
 - **Last Updated:** Shows the last time the forecast was refreshed.
 - **Responsive Design:** Optimized for desktop and mobile devices.
 - **Error Handling:** Alerts users when a searched city is not found.
-- **Icon Lazy Loading:** Weather icons are fetched dynamically reducing the initial bundle size and improving performance.
+- **Icon Lazy Loading:** Weather icons are fetched dynamically improving performance.
 
 
 ---
@@ -66,8 +66,7 @@ A simple React application that provides weather forecasts (hourly and daily) fo
 
 ## Notes
 - The app normalizes city names to handle accented characters and improve search accuracy.
-- The city search uses a local JSON dataset to avoid excessive API calls.
+- The city search uses a local JSON dataset that was converted from a .csv file.
 - The weather data fetch is done once per city change and includes loading states and error handling.
-- The UI prevents layout shifts during loading by setting minimum heights on forecast containers.
 
 
